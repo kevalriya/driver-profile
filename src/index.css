@@ -1,0 +1,393 @@
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
+html,
+body {
+  overflow-x: hidden;
+  border: none;
+  outline: none;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  width: 100vw;
+  height: 100vh;
+  scroll-behavior: smooth !important;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.infoBoxWrapper {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.infoWrapper {
+  position: fixed;
+  top: 30%;
+  margin: 0 1vw 0 1vw;
+  display: flex;
+  flex-direction: column;
+  color: #222222;
+}
+
+.infoText {
+  align-self: center;
+  font-size: 3vh;
+  margin: 0;
+}
+
+.infoSubText {
+  align-self: center;
+  font-size: 2vh;
+  margin-bottom: 5vh;
+}
+
+.formWrapper {
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  margin-bottom: 3vh;
+  margin-top: 3vh;
+}
+
+.formObject {
+  display: flex;
+  align-self: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* outline: 1px solid red; */
+}
+
+.formHeader {
+  color: rgba(0, 0, 0, 0.8);
+  margin: 4vh 0 3vh 0;
+}
+
+.titleText {
+  font-size: 5vh;
+}
+
+.submissionButton {
+  margin: 3vh 2vw 1vh 2vw;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(66, 135, 245, 1);
+  border: none;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  text-align: center;
+  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.2);
+  display: grid;
+  align-items: center;
+  background-color: white;
+  height: 60px;
+  width: 100vw;
+}
+
+.headerText {
+  color: rgba(0, 0, 0, 0.8);
+  place-self: center;
+  grid-column-start: 2;
+  grid-column-end: 2;
+}
+
+.portlLogo {
+  opacity: 0.8;
+  margin-left: 3vw;
+  grid-column-start: 1;
+  grid-column-end: 1;
+}
+
+.profileBackground {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: rgba(66, 135, 245, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.profilePic {
+  display: flex;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.alertModal {
+  background-color: white;
+  color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.alertModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 4;
+}
+
+.modalCloseButton {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0);
+  color: inherit;
+  text-align: center;
+  border: none;
+  z-index: 5;
+}
+
+.notificationModal {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 15;
+  justify-content: center;
+}
+
+.notificationModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 0vh;
+  width: 0vw;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 0;
+}
+
+.notificationCloseButton {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0);
+  color: inherit;
+  text-align: center;
+  border: none;
+  z-index: 5;
+}
+
+.red {
+  background-color: rgba(247, 168, 163, 1);
+  color: rgba(219, 55, 46, 1);
+}
+
+.green {
+  background-color: rgba(154, 245, 176, 1);
+  color: rgba(28, 138, 54, 1);
+}
+
+@media only screen and (max-width: 767px) {
+  .alertModal {
+    width: 95vw;
+    /* height: 60vh; */
+    max-height: 60vh;
+    top: 20vh;
+    overflow-y: scroll;
+    left: 2.5vw;
+    padding: 4.5vh 9vw 2vh 9vw;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),
+      -5px -5px 10px rgba(0, 0, 0, 0.2);
+  }
+  .modalCloseButton {
+    font-size: 5vh;
+    top: 19.5vh;
+    right: 4.5vw;
+  }
+  .alertModalTitle {
+    font-size: 3.5vh;
+  }
+  .alertModalText {
+    font-size: 2.5vh;
+  }
+  .optionalModalButton {
+    font-size: 2.5vh;
+  }
+  .notificationModal {
+    width: 95vw;
+    height: 10vh;
+    top: 88vh;
+    left: 2.5vw;
+    z-index: 5;
+    border-radius: 1.5vh;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),
+      -5px -5px 10px rgba(0, 0, 0, 0.2);
+  }
+  .notificationCloseButton {
+    font-size: 4vh;
+    top: 89.5vh;
+    right: 4.5vw;
+  }
+  .notificationModalTitle {
+    padding-top: 1.1vh;
+    font-size: 95%;
+  }
+  .notificationModalText {
+    font-size: 85%;
+  }
+  .profilePic {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+  .profileBackground {
+    height: 100%;
+  }
+  .formObject {
+    width: 85vw;
+  }
+  .formLabel {
+    width: 80vw;
+  }
+  .formWrapper {
+    position: relative;
+    left: 7.5%;
+    width: 90%;
+  }
+  .header {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  .headerText {
+    font-size: 28px;
+    margin-right: 1vw;
+  }
+  .formHeader {
+    font-size: 28px;
+    margin: 4vh 0 2vh 6vw;
+    text-align: left;
+  }
+  .portlLogo {
+    opacity: 0.8;
+    height: 30px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .alertModal {
+    width: 50vw;
+    height: 40vh;
+    top: 25vh;
+    left: 25vw;
+    padding: 4.5vh 9vw 2vh 9vw;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),
+      -5px -5px 10px rgba(0, 0, 0, 0.2);
+  }
+  .modalCloseButton {
+    font-size: 8vh;
+    top: 23vh;
+    right: 26vw;
+  }
+  .alertModalTitle {
+    font-size: 3.8vh;
+  }
+  .alertModalText {
+    margin-top: 2vh;
+    font-size: 2.3vh;
+  }
+  .optionalModalButton {
+    margin-top: 3vh;
+    font-size: 2.5vh;
+  }
+  .notificationModal {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    width: 70vw;
+    height: 5vh;
+    top: 90vh;
+    left: 15vw;
+    border-radius: 1.5vh;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),
+      -5px -5px 10px rgba(0, 0, 0, 0.2);
+  }
+  .notificationCloseButton {
+    font-size: 5vh;
+    top: 88.2vh;
+    right: 16vw;
+  }
+  .notificationModalTitle {
+    margin: 1vh 2vw 1.1vh 2vw;
+    font-size: 110%;
+  }
+  .notificationModalText {
+    margin: 1vh 2vw 1.1vh 2vw;
+    align-self: center;
+    font-size: 100%;
+  }
+  .profilePic {
+    width: 30vh;
+    height: 30vh;
+    border: 5px solid white;
+    border-radius: 30px;
+    margin: 5vh 5vh 5vh 5vh;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),
+      -5px -5px 10px rgba(0, 0, 0, 0.2);
+  }
+  .profileBackground {
+    height: 100%;
+    margin: 0 0 3vh 0;
+  }
+  .formObject {
+    width: 100%;
+  }
+  .submissionButton {
+    margin: 1vh 4vw 1vh 4vw;
+  }
+  .formWrapper {
+    position: relative;
+    left: 12.5%;
+    width: 75%;
+  }
+  .header {
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+  }
+  .headerText {
+    font-size: 35px;
+  }
+  .formHeader {
+    font-size: 35px;
+  }
+  .portlLogo {
+    opacity: 0.8;
+    height: 30px;
+  }
+}
