@@ -111,11 +111,26 @@ code {
   width: 100vw;
 }
 
+.navBar {
+  grid-column-start: 3;
+  grid-column-end: 3;
+  justify-content: flex-end;
+  justify-self: flex-end;
+  align-self: flex-start;
+}
+
+.nav-link {
+  align-self: flex-end;
+  align-content: flex-end;
+  align-items: flex-end;
+}
+
 .headerText {
   color: rgba(0, 0, 0, 0.8);
   place-self: center;
   grid-column-start: 2;
   grid-column-end: 2;
+  position: absolute;
 }
 
 .portlLogo {
@@ -123,6 +138,7 @@ code {
   margin-left: 3vw;
   grid-column-start: 1;
   grid-column-end: 1;
+  position: absolute;
 }
 
 .profileBackground {
@@ -281,7 +297,7 @@ code {
     width: 90%;
   }
   .header {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
     align-items: center;
   }
   .headerText {
