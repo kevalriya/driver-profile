@@ -5,7 +5,7 @@ class AboutPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            ready: false
+            ready: false,
             title: "About"
         }
     }
