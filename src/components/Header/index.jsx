@@ -19,10 +19,10 @@ const Header = (props) => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{outline: "none"}} />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav>
-                            <Nav.Link href="/profile">Profile</Nav.Link>
-                            <Nav.Link href="/settings">Settings</Nav.Link>
-                            <Nav.Link href="/leaderboard">Leader-Board</Nav.Link>
-                            <Nav.Link href="/about">About</Nav.Link>
+                            <Nav.Link href="/profile#">Profile</Nav.Link>
+                            <Nav.Link href="/settings#">Settings</Nav.Link>
+                            <Nav.Link href="/leaderboard#">Leader-Board</Nav.Link>
+                            <Nav.Link href="/about#">About</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>

@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import Header from '../../components/Header';
 
-class AboutPage extends Component {
+class LeaderBoardPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            ready: false
-            title: "About"
+            title: "Leader Board"
         }
     }
 
@@ -20,4 +19,4 @@ class AboutPage extends Component {
     }
 }
 
-export default AboutPage
+export default LeaderBoardPage

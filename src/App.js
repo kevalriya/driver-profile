@@ -4,6 +4,7 @@ import queryString from 'query-string';
 import Profile from './views/ViewProfile';
 import ErrorPage from './components/Error';
 import About from "./views/About";
+import LeaderBoard from "./views/LeaderBoard"
 import { serverUrl } from './config';
 import './App.css';
 
@@ -21,6 +22,7 @@ const App = () => {
                 <Route exact path='/profile' component={Profile}/>
                 <Route exact path='/error' component={ErrorPage}/>
                 <Route exact path='/about' component={About} />
+                <Route exact path='/leaderboard' component={LeaderBoard} />
                 <Route component={() => {return <Redirect exact to={'/profile' + window.location.search}/>}} />
             </Switch>
         </div>
