@@ -229,6 +229,63 @@ code {
   color: rgba(28, 138, 54, 1);
 }
 
+.tableContainer {
+  width: 50vw;
+  font-size: 18px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.tableRow {
+  display: flex;
+  margin: 10px;
+  background-color: rgba(180, 197, 249, 0.3);
+  border: 1px solid rgba(180, 197, 249, 0.3);
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.rowContent {
+  padding: 1vw;
+  align-self: center;
+  overflow: hidden;
+}
+
+.tableHeader {
+  font-weight: bold;
+}
+
+.columnOne {
+  width: 10%;
+}
+
+.columnTwo {
+  width: 60%;
+}
+
+.columnThree {
+  width: 30%;
+}
+
+hr {
+  margin: 0px;
+  padding: 0px;
+  height: auto;
+  width: 1px;
+  background-color: white;
+}
+
+.lb-form-content {
+  margin: 2vw;
+  margin-bottom: 10px;
+  width: 45vw;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: right;
+  font-size: 18px;
+  justify-content: space-evenly;
+}
+
 @media only screen and (max-width: 767px) {
   .alertModal {
     width: 95vw;
@@ -312,6 +369,14 @@ code {
   .portlLogo {
     opacity: 0.8;
     height: 30px;
+  }
+  .tableContainer {
+    width: 90vw;
+    font-size: 15px;
+  }
+  .lb-form-content {
+    width: 85vw;
+    font-size: 15px;
   }
 }
 
