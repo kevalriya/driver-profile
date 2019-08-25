@@ -111,6 +111,27 @@ code {
   width: 100vw;
 }
 
+.navbarHeader {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  padding-left: 0px;
+  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.2);
+  align-items: center;
+}
+
+.navbar-toggler {
+  padding: 0px;
+  border: none;
+  font-size: medium;
+  outline: none;
+}
+
+.navbarCollapse {
+  justify-content: flex-end;
+}
+
 .navBar {
   grid-column-start: 3;
   grid-column-end: 3;
@@ -127,18 +148,12 @@ code {
 
 .headerText {
   color: rgba(0, 0, 0, 0.8);
-  place-self: center;
-  grid-column-start: 2;
-  grid-column-end: 2;
-  position: absolute;
+  margin-bottom: 0px;
 }
 
 .portlLogo {
   opacity: 0.8;
   margin-left: 3vw;
-  grid-column-start: 1;
-  grid-column-end: 1;
-  position: absolute;
 }
 
 .profileBackground {
@@ -251,10 +266,6 @@ code {
   overflow: hidden;
 }
 
-.tableHeader {
-  font-weight: bold;
-}
-
 .columnOne {
   width: 10%;
 }
@@ -276,7 +287,7 @@ hr {
 }
 
 .lb-form-content {
-  margin: 2vw;
+  margin: 20px;
   margin-bottom: 10px;
   width: 45vw;
   margin-left: auto;
@@ -284,6 +295,18 @@ hr {
   text-align: right;
   font-size: 18px;
   justify-content: space-evenly;
+}
+
+.navbarText {
+  width: 50%;
+  text-align: end;
+}
+
+@media only screen and (max-width: 991px) {
+  .navbarText {
+    text-align: center;
+    width: auto;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -358,7 +381,7 @@ hr {
     align-items: center;
   }
   .headerText {
-    font-size: 28px;
+    font-size: 22px;
     margin-right: 1vw;
   }
   .formHeader {
@@ -372,11 +395,11 @@ hr {
   }
   .tableContainer {
     width: 90vw;
-    font-size: 15px;
+    font-size: 14px;
   }
   .lb-form-content {
     width: 85vw;
-    font-size: 15px;
+    font-size: 14px;
   }
 }
 

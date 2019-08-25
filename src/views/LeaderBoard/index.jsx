@@ -64,7 +64,7 @@ class LeaderBoardPage extends Component {
   //sorting of data fetched by property "count" in descending order
   sortByProperty(count) {
     return function(x, y) {
-      return x[count] === y[count] ? 0 : x[count] > y[count] ? -1 : 1;
+      return y[count] - x[count];
     };
   }
 
@@ -90,21 +90,32 @@ class LeaderBoardPage extends Component {
     return prevMonday;
   }
 
+  //to formate date(yyyy-mm-dd)
+  formatDate(date) {
+    let d = date,
+        month = "" + (d.getMonth() + 1),
+        day = "" + d.getDate(),
+        year = d.getFullYear();
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+    return [year, month, day].join('-');
+}
+
   //to create options for dropdown menu
   createOptions() {
     let prevMonday = this.findLastMonday();
     let formattedDate = prevMonday.toISOString().slice(0, 10);
-    let options = [<option value={formattedDate}>Current week</option>];
+    let options = [<option value={formattedDate} key={1}>Current week</option>];
 
     //to create options for last 10 weeks
     for (let i = 0; i < 10; i++) {
       prevMonday.setDate(prevMonday.getDate() - 7);
-      formattedDate = prevMonday.toISOString().slice(0, 10);
-      options.push(<option value={formattedDate}>{formattedDate}</option>);
+      formattedDate = this.formatDate(prevMonday);
+      options.push(<option value={formattedDate} key={i + 2}>{formattedDate}</option>);
     }
 
     //this option will display lifetime count
-    options.push(<option value="lifetimeCount">Lifetime count</option>);
+    options.push(<option value="lifetimeCount" key={12}>Lifetime count</option>);
     return options;
   }
 
@@ -113,6 +124,30 @@ class LeaderBoardPage extends Component {
     let today = new Date();
     let days = 7 - ((today.getDay() + 6) % 7);
     return days;
+  }
+
+  //to create table row
+  createRow(key, email, count, isTbaleHeader) {
+    return (
+      <div className="tableRow"
+        style={{
+        backgroundColor:
+          this.state.currentDriver === email
+            ? "rgba(180, 197, 249)"
+              : "",
+          fontWeight: isTbaleHeader ? "bold" : ""
+      }}>
+        <div className="rowContent columnOne">{key}</div>
+        <hr />
+        <div className="rowContent columnTwo">
+          {email}
+        </div>
+        <hr />
+        <div className="rowContent columnThree">
+          {count}
+        </div>
+      </div>
+    )
   }
 
   render = () => {
@@ -124,50 +159,15 @@ class LeaderBoardPage extends Component {
           <Header title={this.state.title} />
           <div className="lb-form-content">
             Select week:
-            <select
-              value={this.state.value}
-              onChange={e => this.handleChange(e)}
-            >
+            <select value={this.state.value} onChange={e => this.handleChange(e)}>
               {this.createOptions()}
             </select>
             <p>{this.daysLeft()} day(s) left for this week competition</p>
           </div>
           <div className="tableContainer">
-            <div className="tableRow">
-              <div className="rowContent tableHeader columnOne">#</div>
-              <hr />
-              <div className="rowContent tableHeader columnTwo">
-                Email Address
-              </div>
-              <hr />
-              <div className="rowContent tableHeader columnThree">
-                # of Events
-              </div>
-            </div>
+            {this.createRow("#", "Email Addresses", "# of Events", true)}
             {this.state.drivers.map((driver, index) => {
-              return (
-                <div
-                  className="tableRow"
-                  style={{
-                    backgroundColor:
-                      this.state.currentDriver === driver.email
-                        ? "rgba(180, 197, 249)"
-                        : ""
-                  }}
-                >
-                  <div className="rowContent columnOne">
-                    {index + 1}
-                  </div>
-                  <hr />
-                  <div className="rowContent columnTwo">
-                    {this.emailMasking(driver.email)}
-                  </div>
-                  <hr />
-                  <div className="rowContent columnThree" >
-                    {driver.count}
-                  </div>
-                </div>
-              );
+              return this.createRow(index+1, driver.email, driver.count);
             })}
           </div>
         </div>
