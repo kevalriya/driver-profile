@@ -70,9 +70,12 @@ class LeaderBoardPage extends Component {
 
   //to mask email address
   emailMasking(email) {
-    return (
-      email.substring(0, 1) + "***" + email.substring(email.indexOf("@") - 1)
-    );
+    if (email.indexOf("@") > 0) {
+      return (
+        email.substring(0, 1) + "***" + email.substring(email.indexOf("@") - 1)
+      );
+    }
+    else return email;
   }
 
   //to handle change on selecting option from dropdown menu
@@ -140,7 +143,7 @@ class LeaderBoardPage extends Component {
         <div className="rowContent columnOne">{key}</div>
         <hr />
         <div className="rowContent columnTwo">
-          {email}
+          {this.emailMasking(email)}
         </div>
         <hr />
         <div className="rowContent columnThree">
