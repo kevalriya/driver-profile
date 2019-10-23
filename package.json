@@ -2,6 +2,7 @@
   "name": "driver-profile",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://kevalriya.github.io/driver-profile",
   "dependencies": {
     "auth0-js": "^9.11.1",
     "libphonenumber-js": "^1.7.20",
@@ -25,11 +26,16 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": []
+  "browserslist": [],
+  "devDependencies": {
+    "gh-pages": "^2.1.1"
+  }
 }
