@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/driver-profile/static/css/main.1dc9e4e9.chunk.css",
+    "main.js": "/driver-profile/static/js/main.1fc4832d.chunk.js",
+    "main.js.map": "/driver-profile/static/js/main.1fc4832d.chunk.js.map",
+    "runtime~main.js": "/driver-profile/static/js/runtime~main.3182f477.js",
+    "runtime~main.js.map": "/driver-profile/static/js/runtime~main.3182f477.js.map",
+    "static/css/2.2ce93ba3.chunk.css": "/driver-profile/static/css/2.2ce93ba3.chunk.css",
+    "static/js/2.3dbc620b.chunk.js": "/driver-profile/static/js/2.3dbc620b.chunk.js",
+    "static/js/2.3dbc620b.chunk.js.map": "/driver-profile/static/js/2.3dbc620b.chunk.js.map",
+    "index.html": "/driver-profile/index.html",
+    "precache-manifest.9d243197e3d28112f63cc6105676552d.js": "/driver-profile/precache-manifest.9d243197e3d28112f63cc6105676552d.js",
+    "service-worker.js": "/driver-profile/service-worker.js",
+    "static/css/2.2ce93ba3.chunk.css.map": "/driver-profile/static/css/2.2ce93ba3.chunk.css.map",
+    "static/css/main.1dc9e4e9.chunk.css.map": "/driver-profile/static/css/main.1dc9e4e9.chunk.css.map",
+    "static/media/UploadIcon.svg": "/driver-profile/static/media/UploadIcon.1cedb6e9.svg"
+  }
+}
